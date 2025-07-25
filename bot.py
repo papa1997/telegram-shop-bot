@@ -86,7 +86,7 @@ async def show_cart(call: types.CallbackQuery):
         text += f"{i+1}. {item['name']} — {item['price']} UZS\n"
         total += item["price"]
     text += f"{i+1}. {item['name']} — {item['price']} UZS\n"
-💰 Итого: {total} UZS
+text += f"💰 Итого: {total} UZS"
 
 Выберите валюту для оплаты:"
     kb = InlineKeyboardMarkup()
