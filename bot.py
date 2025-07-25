@@ -83,7 +83,7 @@ async def show_cart(call: types.CallbackQuery):
     total = 0
     for i, item in enumerate(cart):
 
-        text += f"{i+1}. {item['name']} — {item['price']} UZS
+        text += f"{i+1}. {item['name']} — {item['price']} UZS\n"
 "
         total += item["price"]
     text += f"
