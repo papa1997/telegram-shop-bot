@@ -76,9 +76,9 @@ async def show_cart(call: types.CallbackQuery):
     if not cart:
         await call.message.edit_text("🛒 Ваша корзина пуста.")
         return
-    text = """🛒 Ваша корзина:
-
-"
+   text = """🛒 Ваша корзина:
+(здесь будет список товаров)
+"""
     total = 0
     for i, item in enumerate(cart):
         text += f"{i+1}. {item['name']} — {item['price']} UZS
