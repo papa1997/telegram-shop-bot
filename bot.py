@@ -81,12 +81,12 @@ async def show_cart(call: types.CallbackQuery):
 (здесь будет список товаров)
 """
     total = 0
-    for i, item in enumerate(cart, start=1):
-        text += f"{i}. {item['name']} — {item['price']} UZS\n"
-"
-        total += item['price']
-    text += f"
-💰 Итого: {total} UZS"
+for i, item in enumerate(cart, start=1):
+    text += f"{i}. {item['name']} — {item['price']} UZS\n"
+    total += item['price']
+
+text += f"\n💰 Итого: {total} UZS"
+
 
     # Клавиатура выбора валюты
     keyboard = InlineKeyboardMarkup(row_width=2)
