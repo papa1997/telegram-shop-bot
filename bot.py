@@ -74,30 +74,25 @@ async def show_cart(call: types.CallbackQuery):
     user_id = call.from_user.id
     cart = user_data.get(user_id, {}).get("cart", [])
     if not cart:
-        await call.message.edit_text("🛒 Ваша корзина пуста.")
-        return
+    await call.message.edit_text("🛒 Ваша корзина пуста.")
+    return
 
-    text = """🛒 Ваша корзина:
-(здесь будет список товаров)
-"""
-    total = 0
+text = "🛒 Ваша корзина:\n"
+total = 0
 for i, item in enumerate(cart, start=1):
     text += f"{i}. {item['name']} — {item['price']} UZS\n"
-    total += item['price']
-
+    total += item["price"]
 text += f"\n💰 Итого: {total} UZS"
 
-
-    # Клавиатура выбора валюты
 keyboard = InlineKeyboardMarkup(row_width=2)
 keyboard.add(
     InlineKeyboardButton("💳 RUB", callback_data="pay_rub"),
     InlineKeyboardButton("💳 UAH", callback_data="pay_uah"),
     InlineKeyboardButton("💳 UZS", callback_data="pay_uzs"),
-    InlineKeyboardButton("💳 USDT", callback_data="pay_usdt"),
+    InlineKeyboardButton("💳 USDT", callback_data="pay_usdt")
 )
 
-    await call.message.edit_text(
+await call.message.edit_text(
     text + "\n\nВыберите валюту для оплаты:",
     reply_markup=keyboard
 )
