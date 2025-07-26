@@ -105,7 +105,7 @@ async def show_payment_details(call: types.CallbackQuery):
     cart = user_data.get(user_id, {}).get("cart", [])
     total = sum(item["price"] for item in cart)
     details = config["payment"].get(cur, "Нет данных")
-    msg = f"💳 Оплата в {cur} на сумму: {total}
+    msg = f"💳 Оплата в {cur} на сумму: {total} UZS\nРеквизиты: ..."
 
 Реквизиты:
 {details}
