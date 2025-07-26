@@ -73,7 +73,7 @@ async def add_to_cart(call: types.CallbackQuery):
 async def show_cart(call: types.CallbackQuery):
     user_id = call.from_user.id
     cart = user_data.get(user_id, {}).get("cart", [])
-    if not cart:
+if not cart:
     await call.message.edit_text("🛒 Ваша корзина пуста.")
     return
 
