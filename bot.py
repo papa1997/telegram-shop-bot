@@ -114,7 +114,7 @@ async def show_payment_details(call: types.CallbackQuery):
     await call.message.edit_text(msg)
     # Уведомление админу
     admin_id = config["admin_id"]
-    text = f"🆕 Новый заказ от @{call.from_user.username or call.from_user.id}:
+    text = f"🆕 Новый заказ от @{call.from_user.username or call.from_user.id}:\n"
 
 "
     for i, item in enumerate(cart):
