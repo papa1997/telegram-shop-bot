@@ -97,7 +97,10 @@ keyboard.add(
     InlineKeyboardButton("💳 USDT", callback_data="pay_usdt"),
 )
 
-    await call.message.edit_text(text + await call.message.edit_text(text + "\nВыберите валюту для оплаты:", reply_markup=keyboard)
+    await call.message.edit_text(
+    text + "\n\nВыберите валюту для оплаты:",
+    reply_markup=keyboard
+)
 
 
 @dp.callback_query_handler(lambda c: c.data.startswith("pay|"))
