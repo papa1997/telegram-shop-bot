@@ -89,13 +89,13 @@ text += f"\n💰 Итого: {total} UZS"
 
 
     # Клавиатура выбора валюты
-    keyboard = InlineKeyboardMarkup(row_width=2)
-    keyboard.add(
-        InlineKeyboardButton("💳 RUB", callback_data="pay_rub"),
-        InlineKeyboardButton("💳 UAH", callback_data="pay_uah"),
-        InlineKeyboardButton("💳 UZS", callback_data="pay_uzs"),
-        InlineKeyboardButton("💳 USDT", callback_data="pay_usdt"),
-    )
+keyboard = InlineKeyboardMarkup(row_width=2)
+keyboard.add(
+    InlineKeyboardButton("💳 RUB", callback_data="pay_rub"),
+    InlineKeyboardButton("💳 UAH", callback_data="pay_uah"),
+    InlineKeyboardButton("💳 UZS", callback_data="pay_uzs"),
+    InlineKeyboardButton("💳 USDT", callback_data="pay_usdt"),
+)
 
     await call.message.edit_text(text + "
 
