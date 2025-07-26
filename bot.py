@@ -110,7 +110,7 @@ async def show_payment_details(call: types.CallbackQuery):
 Реквизиты:
 {details}
 
-После оплаты напишите админу."
+"После оплаты напишите админу."
     await call.message.edit_text(msg)
     # Уведомление админу
     admin_id = config["admin_id"]
