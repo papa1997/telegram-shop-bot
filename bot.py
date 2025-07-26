@@ -105,12 +105,12 @@ async def show_payment_details(call: types.CallbackQuery):
     cart = user_data.get(user_id, {}).get("cart", [])
     total = sum(item["price"] for item in cart)
     details = config["payment"].get(cur, "Нет данных")
-    msg = f"💳 Оплата в {cur} на сумму: {total} UZS\nРеквизиты: ..."
-
-Реквизиты:
-{details}
-
-"После оплаты напишите админу."
+    msg = (
+    f"💳 Оплата в {cur} на сумму: {total} UZS\n"
+    f"Реквизиты:\n"
+    f"{details}\n\n"
+    "После оплаты напишите админу."
+)
     await call.message.edit_text(msg)
     # Уведомление админу
     admin_id = config["admin_id"]
